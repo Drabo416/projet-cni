@@ -93,7 +93,7 @@
                   <input type="tel" id="telephone" name="telephone">
               </div>
               <div class="form-group">
-                  <label for="telephone">Taille</label>
+                  <label for="telephone">Taille(M)</label>
                   <input type="number" id="telephone" name="taille">
               </div>
               <div class="form-group">

@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require('verifie.php');
     require("connection.php");
     require('generate-code.php');
@@ -51,6 +52,10 @@ if (!$areAllFieldsPresent) {
         values(:numCNI, :nom, :prenom, :datenaiss, :lieunaiss, :heurenaiss, :telephone, :lieuphoto, :lieusignature, :taille, Now(), Now(), DATE_ADD(NOW(), INTERVAL 10 month), :idprofession, :idsexe, :codepays, :idmere, :idpere)");
     $numCNI=generateUniqueCode();
     $query->execute(array('numCNI'=>$numCNI, 'nom'=>$_POST['nom'], 'prenom'=>$_POST['prenom'], 'idsexe'=>$_POST["idsexe"], 'idprofession'=>$_POST['idprofession'], 'codepays'=>$_POST['codepays'], 'lieunaiss'=>$_POST['lieunaiss'], 'datenaiss'=>$_POST['datenaiss'], 'heurenaiss'=>$_POST['heurenaiss'], 'telephone'=>$_POST['telephone'], 'taille'=>$_POST['taille'], 'lieuphoto'=>$profile, 'lieusignature'=>$signature, 'idmere'=>$mereId, 'idpere'=>$pereId));
-    header("Location: sigin.php");
+    $lastIdQuery = "SELECT numCNI FROM individu ORDER BY dateemission DESC LIMIT 1";
+    $lastIdStmt = $bd->query($lastIdQuery);
+    $lastId = $lastIdStmt->fetchColumn();
+    $_SESSION['individuNumCni'] = $lastId;
+    header("Location: carte.php");
 }
 ?>
