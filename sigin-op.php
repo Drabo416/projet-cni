@@ -35,6 +35,7 @@ if (!$areAllFieldsPresent) {
 }else{
     $profile= saveFile("lieuphoto");
     $signature = saveFile("lieusignature");
+    $signature = saveFile("lieuempreinte");
     $pereQuery = $bd->prepare("INSERT INTO  pere (nompere, prenompere, datenaisspere, lieunaisspere, idprofession)
     values(:nompere, :prenompere, :datenaisspere, :lieunaisspere, :idprofession)
     ");

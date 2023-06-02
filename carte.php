@@ -29,9 +29,19 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="d-flex flex-column justify-content-center" style="height: 100vh;">
-    <section class="d-flex justify-content-center my-3" style=" box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;width: 60%;height: 400px; margin:auto;" >
-        <div class="rounded-1 d-flex my-3 mx-3 flex-column" style="width: 85.60mm; height: 53.98mm; background-color: #30A2FF; " >
+    <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100vh;">
+    <div>
+        <!-- <Button class="btn btn-primary">Imprimer</Button> -->
+        <?php
+            if(isset($_SESSION['adminId'])){
+                ?>
+                 <a href="signin.php?edit=ok"><Button class="btn btn-primary">Modifier</Button></a>
+                <?php
+            }
+        ?>
+        <a href="deconnecter.php"><Button class="btn btn-primary">Déconnexion</Button></a>
+    </div>
+        <div class="rounded-1 d-flex my-3 mx-3 flex-column" style="width: 85.60mm; height: 53.98mm;box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; " >
             <div class="p-2" style="flex: 1;">
                 <div class="d-flex">
                     <img width="30" height="30" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_C%C3%B4te_d%27Ivoire.svg/langfr-225px-Flag_of_C%C3%B4te_d%27Ivoire.svg.png" alt="">
@@ -52,7 +62,7 @@
                 </div>
             </div>
         </div>
-        <div class="rounded-1 d-flex my-3 mx-3 flex-column" style="width: 85.60mm; height: 53.98mm; background-color: #00C4FF;" >
+        <div class="rounded-1 d-flex my-3 mx-3 flex-column" style="width: 85.60mm; height: 53.98mm;  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;" >
             <div class="p-2" style="flex: 1;">
                 <div class="d-flex">
                     <img width="30" height="30" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Flag_of_C%C3%B4te_d%27Ivoire.svg/langfr-225px-Flag_of_C%C3%B4te_d%27Ivoire.svg.png" alt="">
@@ -74,7 +84,6 @@
                 </div>
             </div>
         </div>
-</section>
 </div>
 <style>
     p{

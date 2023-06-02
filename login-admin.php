@@ -11,9 +11,12 @@
 <body>
     <div class="w-100 d-flex justify-content-center align-items-center" style="height: 100vh;" >
                 <div class="w-25 h-50 px-2 d-flex flex-column justify-content-center align-items-center" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" >
-                    <p class="h4 center">Bienvenue à vous</p>
-                    <a class="w-100" href="login-admin.php"><button class="btn btn-primary w-100 my-2" type="submit">Se connecter (Admin)</button></a>
-                    <a class="w-100" href="login.php"><button class="btn btn-primary w-100 my-2" type="submit">Se connecter (Enrolement)</button></a>
+                    <p class="h1 center">Login</p>
+                    <form action="login-admin-op.php" method='POST'>
+                        <input type="text" class="form-control my-3" name='email' aria-label="Small" placeholder="Email" aria-describedby="inputGroup-sizing-sm">
+                        <input type="password" class="form-control my-3" name='password' placeholder="Mot de passe" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                        <button class="btn btn-primary" type="submit">Connexion</button>
+                    </form>
                 </div>
     </div>
 </body>
